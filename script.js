@@ -109,3 +109,42 @@ addToListBtnNode.addEventListener("click", () => {
   ulNode.append(liNode)
 
 })
+
+
+//* Cambiando ids y classes
+
+const finalSectionNode = document.querySelector("#final-section")
+finalSectionNode.addEventListener("click", () => {
+
+  // finalSectionNode.id = "otro-id"
+
+  // finalSectionNode.className = "container red-container"
+
+  // classList => propiedad de nodos que me permite:
+  // - agregar nuevas clases
+  // - remover clases previas
+  // - toggle 
+
+  // finalSectionNode.classList.add("red-container")
+  // finalSectionNode.classList.remove("blue-container")
+
+  finalSectionNode.classList.toggle("red-container")
+  finalSectionNode.classList.toggle("blue-container")
+
+})
+
+//* directamente podemos modificar los estilos de los nodos
+
+const lastH2Node = document.querySelector("#last-h2")
+
+lastH2Node.addEventListener("mouseenter", () => {
+
+  // console.log(lastH2Node.style)
+  lastH2Node.style.color = "red"
+  lastH2Node.style.fontSize = "30px"
+  lastH2Node.style.backgroundColor = "orange"
+  lastH2Node.style.padding = "10px"
+  lastH2Node.style.border = "solid 2px black"
+  lastH2Node.style.borderRadius = "5px"
+  
+})
