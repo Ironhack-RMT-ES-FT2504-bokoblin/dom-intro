@@ -51,4 +51,61 @@ cardNodeList.forEach((eachCardNode) => {
 
 //* EVENTOS
 
+const thirdTitleNode = document.querySelector("#third-title")
+// console.log(thirdTitleNode)
+
+thirdTitleNode.addEventListener("mouseenter", () => {
+  thirdTitleNode.innerText = "Cambiando el texto de el titulo"
+})
+
+thirdTitleNode.addEventListener("mouseleave", () => {
+  thirdTitleNode.innerText = "Aprendiendo a manipular el DOM"
+})
+
+// counter
+
+const addBtnNode = document.querySelector("#increment")
+const spanNode = document.querySelector("#count h2 span")
+addBtnNode.addEventListener("click", () => {
+  spanNode.innerText++
+})
+
 //* MANIPULACION DEL DOM
+
+//* borrar elementos del DOM
+
+const deleteBtnNode = document.querySelector("#delete-btn")
+
+deleteBtnNode.addEventListener("click", () => {
+
+  // deleteBtnNode.remove() // NO DESTRUYE EL NODO. simplemente, lo remueve del DOM
+  // thirdTitleNode.remove()
+
+  // ejemplo de borrar todo el nodo de la pantalla. No muy correcto
+  // document.querySelector("body").remove()
+
+  // Mejor opción. limpiar el contenido de un nodo
+  document.querySelector("body").innerHTML = ""
+
+})
+
+
+// funcionalidad donde el usuario agrega elementos a una lista
+const inputNode = document.querySelector("#name")
+const addToListBtnNode = document.querySelector("#add-form button")
+const ulNode = document.querySelector("#add-list")
+
+addToListBtnNode.addEventListener("click", () => {
+
+  // ver que hay dentro del input
+  let textoDelNuevoLi = inputNode.value
+
+  // crear el elemento de li (con el texto del input)
+  const liNode = document.createElement("li")
+  liNode.innerText = textoDelNuevoLi
+  console.log(liNode)
+
+  // añadir ese li a la lista
+  ulNode.append(liNode)
+
+})
